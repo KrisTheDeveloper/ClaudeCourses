@@ -1,0 +1,54 @@
+[
+  {
+    "output": "```json\n[\n  \"Neuroplasticity\",\n  \"Language Acquisition\",\n  \"Second Language Learning\",\n  \"fMRI Neuroimaging\",\n  \"Brain Activation Mapping\",\n  \"Broca's Area\",\n  \"Syntactic Processing\",\n  \"Mixed-Methods Research\",\n  \"Computational Modeling\",\n  \"Phenomenological Analysis\",\n  \"Bayesian Statistics\",\n  \"Generative Linguistics\",\n  \"Connectionist Models\",\n  \"Neural Networks\",\n  \"Sociocultural Constructivism\",\n  \"Metacognition\",\n  \"Dorsolateral Prefrontal Cortex\",\n  \"Declarative Memory\",\n  \"Procedural Memory\",\n  \"Hippocampal-Striatal Pathways\",\n  \"Explicit Learning\",\n  \"Implicit Learning\",\n  \"Cognitive Neuroscience\",\n  \"Thematic Analysis\",\n  \"Semi-structured Interviews\",\n  \"Linguistic Capacity\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study employs a mixed-methods approach integrating computational modeling with qualitative phenomenological analysis to examine neuroplasticity mechanisms in language acquisition. We utilized fMRI neuroimaging to map Broca's area activation patterns while participants engaged in syntactic processing tasks, combined with Bayesian statistical frameworks to analyze the probabilistic distribution of neural responses. Simultaneously, semi-structured interviews were conducted using thematic analysis methodology to capture participants' metacognitive experiences during language learning. The theoretical framework draws from Chomskyan generative linguistics, connectionist models of neural networks, and sociocultural constructivism, examining how environmental factors interact with innate linguistic capacity. Our findings suggest that dorsolateral prefrontal cortex engagement correlates with explicit rule application, while implicit learning recruits hippocampal-striatal pathways, demonstrating the complementary role of declarative and procedural memory systems in second language acquisition."
+      },
+      "solution_criteria": [
+        "Extracts topics spanning neuroscience (fMRI, neuroplasticity, brain regions), linguistics (syntax, generative grammar), methodology (mixed-methods, thematic analysis, Bayesian statistics), and cognitive science (memory systems, implicit/explicit learning)",
+        "Returns output as a JSON array of strings with each topic as a distinct element",
+        "Captures both specific technical terms and broader conceptual domains without duplication"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with an interdisciplinary passage mixing technical jargon, theoretical frameworks, and methodological discussions to ensure the prompt captures topics across different academic domains"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings with no extra commentary, contains only topic strings, and returns nothing but the array. It meets all secondary criteria by capturing topics across neuroscience, linguistics, methodology, and cognitive science domains with appropriate specificity and no duplication. The inclusion of 'Cognitive Neuroscience' is a minor deviation from strict extraction (it's a field label rather than a topic from the passage), but this is a negligible issue that doesn't significantly impact the overall quality. The extraction is thorough, well-organized, and directly responsive to the task."
+  },
+  {
+    "output": "```json\n[\n  \"Cognitive Neuroscience\",\n  \"Artificial Intelligence\",\n  \"Neural Networks\",\n  \"Machine Learning\",\n  \"Deep Learning\",\n  \"Biological Neural Processes\",\n  \"Synaptic Plasticity\",\n  \"Neural Adaptation\",\n  \"Convolutional Neural Networks\",\n  \"Visual Information Processing\",\n  \"Mammalian Visual Cortex\",\n  \"Recurrent Neural Networks\",\n  \"Temporal Dynamics\",\n  \"Hippocampal Memory Consolidation\",\n  \"Neurotransmitter Dynamics\",\n  \"Optimization Algorithms\",\n  \"Attention Mechanisms\",\n  \"Transformer Models\",\n  \"Selective Attention\",\n  \"Prefrontal Cortex\",\n  \"Learning and Memory\",\n  \"Computational Models\",\n  \"Neuroscientific Understanding\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the intersection of cognitive neuroscience and artificial intelligence in understanding neural networks. We investigate how machine learning algorithms mirror biological neural processes, particularly focusing on deep learning architectures that simulate synaptic plasticity and neural adaptation. Our findings demonstrate that convolutional neural networks process visual information similarly to the mammalian visual cortex, while recurrent neural networks exhibit temporal dynamics analogous to hippocampal memory consolidation. Furthermore, we explore how neurotransmitter dynamics inform optimization algorithms, and how attention mechanisms in transformers parallel selective attention in prefrontal cortex function. These insights bridge computational models with neuroscientific understanding of learning and memory."
+      },
+      "solution_criteria": [
+        "Extracts all distinct topics without duplication (e.g., 'neural networks' and 'deep learning' as separate topics, not merged)",
+        "Separates hierarchical concepts appropriately (e.g., 'visual cortex' distinct from 'cognitive neuroscience')",
+        "Returns output as a valid JSON array of strings",
+        "Includes topics at appropriate granularity without over-fragmentation or excessive abstraction"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing overlapping and hierarchical topics to verify the prompt correctly identifies and separates distinct concepts without redundancy"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. Regarding secondary criteria, the extraction demonstrates strong topic identification with appropriate granularity. Topics are well-separated hierarchically (cognitive neuroscience vs. specific brain regions, machine learning vs. specific architectures). The solution avoids over-merging related concepts while maintaining reasonable specificity. The minor weaknesses around 'Neuroscientific Understanding' and potential over-fragmentation of transformer-related topics are negligible given the task's emphasis on extracting distinct topics without merging them."
+  },
+  {
+    "output": "```json\n[\n  \"Atherosclerosis\",\n  \"Atherosclerotic Lesion Formation\",\n  \"Pathogenesis\",\n  \"Endothelial Dysfunction\",\n  \"Lipoprotein Oxidation\",\n  \"Oxidized Low-Density Lipoproteins (oxLDL)\",\n  \"Macrophage Infiltration\",\n  \"Foam Cells\",\n  \"Inflammatory Response\",\n  \"Toll-Like Receptor Signaling\",\n  \"Monocyte Recruitment\",\n  \"Nitric Oxide Bioavailability\",\n  \"Vasodilation\",\n  \"Vascular Permeability\",\n  \"MicroRNA Dysregulation\",\n  \"miR-122\",\n  \"miR-155\",\n  \"Plaque Progression\",\n  \"Fibrous Cap\",\n  \"Matrix Metalloproteinase Activity\",\n  \"Thrombotic Complications\",\n  \"Vascular Biology\",\n  \"Cardiovascular Pathology\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The pathogenesis of atherosclerotic lesion formation involves a complex interplay between endothelial dysfunction, lipoprotein oxidation, and macrophage infiltration. Oxidized low-density lipoproteins (oxLDL) trigger inflammatory cascades through toll-like receptor signaling, promoting the recruitment of monocytes to arterial walls where they differentiate into foam cells. This process is exacerbated by impaired nitric oxide bioavailability, which compromises vasodilation and increases vascular permeability. Recent evidence suggests that microRNA dysregulation, particularly miR-122 and miR-155 upregulation, amplifies pro-inflammatory responses and accelerates plaque progression. The fibrous cap's structural integrity is further undermined by matrix metalloproteinase activity, creating a milieu conducive to thrombotic complications."
+      },
+      "solution_criteria": [
+        "Extracts both explicit mechanistic terms (e.g., 'endothelial dysfunction', 'lipoprotein oxidation') and implicit domain topics derived from contextual relationships (e.g., 'inflammation', 'vascular biology', 'thrombosis')",
+        "Recognizes that acronyms and molecular markers (oxLDL, miR-122) represent broader topics within their biological context rather than listing them as isolated entities",
+        "Achieves reasonable coverage of the passage's conceptual scope without requiring exhaustive enumeration of every mentioned molecule or pathway"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing implicit topics and domain-specific terminology that require contextual understanding to extract, rather than just explicit keyword matching"
+    },
+    "score": 8,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only topic strings with no extraneous commentary. Regarding secondary criteria, it demonstrates strong performance in extracting both explicit mechanistic terms and implicit domain topics. However, it has minor deficiencies in applying the principle that 'acronyms and molecular markers represent broader topics within their biological context rather than listing them as isolated entities'\u2014the inclusion of miR-122 and miR-155 as separate entries somewhat contradicts this guidance. Additionally, minor redundancy exists with closely related atherosclerosis concepts. These are refinement issues rather than fundamental failures. The solution achieves reasonable conceptual coverage without exhaustive enumeration, as required."
+  }
+]

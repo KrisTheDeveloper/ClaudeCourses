@@ -1,0 +1,254 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">8.7 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">100.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with an interdisciplinary passage mixing technical jargon, theoretical frameworks, and methodological discussions to ensure the prompt captures topics across different academic domains</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study employs a mixed-methods approach integrating computational modeling with qualitative phenomenological analysis to examine neuroplasticity mechanisms in language acquisition. We utilized fMRI neuroimaging to map Broca's area activation patterns while participants engaged in syntactic processing tasks, combined with Bayesian statistical frameworks to analyze the probabilistic distribution of neural responses. Simultaneously, semi-structured interviews were conducted using thematic analysis methodology to capture participants' metacognitive experiences during language learning. The theoretical framework draws from Chomskyan generative linguistics, connectionist models of neural networks, and sociocultural constructivism, examining how environmental factors interact with innate linguistic capacity. Our findings suggest that dorsolateral prefrontal cortex engagement correlates with explicit rule application, while implicit learning recruits hippocampal-striatal pathways, demonstrating the complementary role of declarative and procedural memory systems in second language acquisition.</td>
+                <td class="criteria">• Extracts topics spanning neuroscience (fMRI, neuroplasticity, brain regions), linguistics (syntax, generative grammar), methodology (mixed-methods, thematic analysis, Bayesian statistics), and cognitive science (memory systems, implicit/explicit learning)<br>• Returns output as a JSON array of strings with each topic as a distinct element<br>• Captures both specific technical terms and broader conceptual domains without duplication</td>
+                <td class="output"><pre>```json
+[
+  "Neuroplasticity",
+  "Language Acquisition",
+  "Second Language Learning",
+  "fMRI Neuroimaging",
+  "Brain Activation Mapping",
+  "Broca's Area",
+  "Syntactic Processing",
+  "Mixed-Methods Research",
+  "Computational Modeling",
+  "Phenomenological Analysis",
+  "Bayesian Statistics",
+  "Generative Linguistics",
+  "Connectionist Models",
+  "Neural Networks",
+  "Sociocultural Constructivism",
+  "Metacognition",
+  "Dorsolateral Prefrontal Cortex",
+  "Declarative Memory",
+  "Procedural Memory",
+  "Hippocampal-Striatal Pathways",
+  "Explicit Learning",
+  "Implicit Learning",
+  "Cognitive Neuroscience",
+  "Thematic Analysis",
+  "Semi-structured Interviews",
+  "Linguistic Capacity"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings with no extra commentary, contains only topic strings, and returns nothing but the array. It meets all secondary criteria by capturing topics across neuroscience, linguistics, methodology, and cognitive science domains with appropriate specificity and no duplication. The inclusion of 'Cognitive Neuroscience' is a minor deviation from strict extraction (it's a field label rather than a topic from the passage), but this is a negligible issue that doesn't significantly impact the overall quality. The extraction is thorough, well-organized, and directly responsive to the task.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing overlapping and hierarchical topics to verify the prompt correctly identifies and separates distinct concepts without redundancy</td>
+                <td class="prompt-inputs"><strong>content:</strong> This study examines the intersection of cognitive neuroscience and artificial intelligence in understanding neural networks. We investigate how machine learning algorithms mirror biological neural processes, particularly focusing on deep learning architectures that simulate synaptic plasticity and neural adaptation. Our findings demonstrate that convolutional neural networks process visual information similarly to the mammalian visual cortex, while recurrent neural networks exhibit temporal dynamics analogous to hippocampal memory consolidation. Furthermore, we explore how neurotransmitter dynamics inform optimization algorithms, and how attention mechanisms in transformers parallel selective attention in prefrontal cortex function. These insights bridge computational models with neuroscientific understanding of learning and memory.</td>
+                <td class="criteria">• Extracts all distinct topics without duplication (e.g., 'neural networks' and 'deep learning' as separate topics, not merged)<br>• Separates hierarchical concepts appropriately (e.g., 'visual cortex' distinct from 'cognitive neuroscience')<br>• Returns output as a valid JSON array of strings<br>• Includes topics at appropriate granularity without over-fragmentation or excessive abstraction</td>
+                <td class="output"><pre>```json
+[
+  "Cognitive Neuroscience",
+  "Artificial Intelligence",
+  "Neural Networks",
+  "Machine Learning",
+  "Deep Learning",
+  "Biological Neural Processes",
+  "Synaptic Plasticity",
+  "Neural Adaptation",
+  "Convolutional Neural Networks",
+  "Visual Information Processing",
+  "Mammalian Visual Cortex",
+  "Recurrent Neural Networks",
+  "Temporal Dynamics",
+  "Hippocampal Memory Consolidation",
+  "Neurotransmitter Dynamics",
+  "Optimization Algorithms",
+  "Attention Mechanisms",
+  "Transformer Models",
+  "Selective Attention",
+  "Prefrontal Cortex",
+  "Learning and Memory",
+  "Computational Models",
+  "Neuroscientific Understanding"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and nothing else in the response. Regarding secondary criteria, the extraction demonstrates strong topic identification with appropriate granularity. Topics are well-separated hierarchically (cognitive neuroscience vs. specific brain regions, machine learning vs. specific architectures). The solution avoids over-merging related concepts while maintaining reasonable specificity. The minor weaknesses around 'Neuroscientific Understanding' and potential over-fragmentation of transformer-related topics are negligible given the task's emphasis on extracting distinct topics without merging them.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a passage containing implicit topics and domain-specific terminology that require contextual understanding to extract, rather than just explicit keyword matching</td>
+                <td class="prompt-inputs"><strong>content:</strong> The pathogenesis of atherosclerotic lesion formation involves a complex interplay between endothelial dysfunction, lipoprotein oxidation, and macrophage infiltration. Oxidized low-density lipoproteins (oxLDL) trigger inflammatory cascades through toll-like receptor signaling, promoting the recruitment of monocytes to arterial walls where they differentiate into foam cells. This process is exacerbated by impaired nitric oxide bioavailability, which compromises vasodilation and increases vascular permeability. Recent evidence suggests that microRNA dysregulation, particularly miR-122 and miR-155 upregulation, amplifies pro-inflammatory responses and accelerates plaque progression. The fibrous cap's structural integrity is further undermined by matrix metalloproteinase activity, creating a milieu conducive to thrombotic complications.</td>
+                <td class="criteria">• Extracts both explicit mechanistic terms (e.g., 'endothelial dysfunction', 'lipoprotein oxidation') and implicit domain topics derived from contextual relationships (e.g., 'inflammation', 'vascular biology', 'thrombosis')<br>• Recognizes that acronyms and molecular markers (oxLDL, miR-122) represent broader topics within their biological context rather than listing them as isolated entities<br>• Achieves reasonable coverage of the passage's conceptual scope without requiring exhaustive enumeration of every mentioned molecule or pathway</td>
+                <td class="output"><pre>```json
+[
+  "Atherosclerosis",
+  "Atherosclerotic Lesion Formation",
+  "Pathogenesis",
+  "Endothelial Dysfunction",
+  "Lipoprotein Oxidation",
+  "Oxidized Low-Density Lipoproteins (oxLDL)",
+  "Macrophage Infiltration",
+  "Foam Cells",
+  "Inflammatory Response",
+  "Toll-Like Receptor Signaling",
+  "Monocyte Recruitment",
+  "Nitric Oxide Bioavailability",
+  "Vasodilation",
+  "Vascular Permeability",
+  "MicroRNA Dysregulation",
+  "miR-122",
+  "miR-155",
+  "Plaque Progression",
+  "Fibrous Cap",
+  "Matrix Metalloproteinase Activity",
+  "Thrombotic Complications",
+  "Vascular Biology",
+  "Cardiovascular Pathology"
+]
+```</pre></td>
+                <td class="score-col"><span class="score score-high">8</span></td>
+                <td class="reasoning">The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only topic strings with no extraneous commentary. Regarding secondary criteria, it demonstrates strong performance in extracting both explicit mechanistic terms and implicit domain topics. However, it has minor deficiencies in applying the principle that 'acronyms and molecular markers represent broader topics within their biological context rather than listing them as isolated entities'—the inclusion of miR-122 and miR-155 as separate entries somewhat contradicts this guidance. Additionally, minor redundancy exists with closely related atherosclerosis concepts. These are refinement issues rather than fundamental failures. The solution achieves reasonable conceptual coverage without exhaustive enumeration, as required.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
