@@ -1,0 +1,150 @@
+
+================================================================================
+                    CHURN ANALYSIS - EXECUTIVE SUMMARY
+================================================================================
+
+OVERVIEW
+--------
+Dataset: 500 streaming service users
+Overall Churn Rate: 38.6% (193 churned, 307 retained)
+
+================================================================================
+                        TOP 5 MAJOR CHURN DRIVERS
+================================================================================
+
+1. TOTAL VIEWING HOURS (Importance: 23.8%)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Churned users: 66.6 hours/month
+   • Retained users: 83.2 hours/month
+   • Difference: -20.0% (highly significant, p < 0.001)
+   
+   KEY INSIGHT: Lower engagement is the strongest predictor of churn.
+   Users watching less than 70 hours/month are at HIGH RISK.
+
+2. AVERAGE SESSION DURATION (Importance: 21.6%)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Churned users: 49.4 minutes/session
+   • Retained users: 57.8 minutes/session  
+   • Difference: -14.4% (highly significant, p < 0.001)
+   
+   KEY INSIGHT: Shorter sessions indicate lower content satisfaction.
+   Sessions under 50 minutes signal disengagement.
+
+3. NUMBER OF UNIQUE TITLES WATCHED (Importance: 15.9%)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Churned users: 19.5 titles/month
+   • Retained users: 23.7 titles/month
+   • Difference: -18.1% (highly significant, p < 0.001)
+   
+   KEY INSIGHT: Content diversity matters significantly.
+   Users exploring fewer titles are more likely to churn.
+
+4. TOP GENRE (Importance: 11.4%)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Churn rates by genre:
+   • Horror: 52.3% (HIGHEST RISK)
+   • Thriller: 48.3%
+   • Action: 44.6%
+   • Romance: 41.8%
+   • SciFi: 40.5%
+   • Drama: 35.3%
+   • Comedy: 33.0%
+   • Documentary: 25.9% (LOWEST RISK)
+   
+   KEY INSIGHT: Content preference impacts retention.
+   Horror/Thriller fans show 2x churn vs Documentary viewers.
+
+5. CUSTOMER SERVICE INTERACTIONS (Importance: 9.1%)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Churned users: 3.18 interactions/year
+   • Retained users: 2.49 interactions/year
+   • Difference: +27.7% (highly significant, p < 0.001)
+   
+   KEY INSIGHT: More CS contacts = Higher churn risk.
+   Each additional interaction increases churn likelihood.
+   Users with 4+ interactions have 50%+ churn rate.
+
+================================================================================
+                        ADDITIONAL FINDINGS
+================================================================================
+
+BINGE WATCHING SESSIONS (Importance: 11.2%)
+   • Churned: 6.2 sessions/month vs Retained: 7.7 sessions/month
+   • -19.7% difference (p < 0.001)
+   • Inverse relationship with churn
+
+SUBSCRIPTION TIER (Importance: 3.5%)
+   • Basic tier: 43.5% churn rate (HIGHEST)
+   • Standard tier: 39.5% churn rate
+   • Premium tier: 24.1% churn rate (LOWEST)
+   • Chi-square test significant (p = 0.009)
+
+MONTHLY COST (Importance: 3.6%)
+   • Churned: $11.18 vs Retained: $12.11
+   • -7.7% difference (p = 0.005)
+   • Lower cost correlates with higher churn (tier effect)
+
+================================================================================
+                        KEY ACTIONABLE INSIGHTS
+================================================================================
+
+🎯 PRIMARY RISK FACTORS (Immediate Action Required):
+   1. Users viewing < 70 hours/month
+   2. Average session duration < 50 minutes
+   3. Watching < 20 unique titles/month
+   4. 4+ customer service interactions/year
+   5. Basic tier subscribers
+
+📊 ENGAGEMENT SCORE ANALYSIS:
+   • Created composite engagement metric (viewing + binge + diversity)
+   • Low engagement (bottom 30%): ~60% churn rate
+   • High engagement (top 30%): ~15% churn rate
+   • 4x difference between extremes
+
+💡 STRATEGIC RECOMMENDATIONS:
+
+   1. PROACTIVE MONITORING:
+      → Flag users with declining viewing hours
+      → Identify short session patterns early
+      → Track content diversity metrics
+
+   2. TARGETED INTERVENTIONS:
+      → Personalized content recommendations for low-diversity viewers
+      → Re-engagement campaigns for users < 70 hours/month
+      → Premium upgrade incentives for Basic tier at-risk users
+
+   3. CUSTOMER SERVICE:
+      → Investigate root causes of CS interactions
+      → Resolve issues before multiple contacts occur
+      → CS contact is a strong leading indicator
+
+   4. CONTENT STRATEGY:
+      → Strengthen Horror/Thriller catalog quality
+      → Promote Documentary content (lowest churn)
+      → Encourage content exploration
+
+   5. PRICING/TIER OPTIMIZATION:
+      → Review Basic tier value proposition
+      → Consider Premium tier benefits promotion
+      → Price sensitivity appears LOW (cost is minor factor)
+
+================================================================================
+                        STATISTICAL CONFIDENCE
+================================================================================
+
+All top 5 drivers show HIGHLY SIGNIFICANT relationships (p < 0.001)
+Random Forest model confirms importance rankings
+Results validated through multiple statistical tests:
+  ✓ T-tests for numerical variables
+  ✓ Chi-square tests for categorical variables
+  ✓ Correlation analysis
+  ✓ Feature importance from ensemble methods
+
+================================================================================
+
+CONCLUSION:
+Churn is primarily driven by USER ENGAGEMENT, not pricing. Focus retention 
+efforts on increasing viewing hours, session quality, content discovery, and 
+resolving customer service issues proactively.
+
+================================================================================
